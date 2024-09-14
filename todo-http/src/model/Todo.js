@@ -24,9 +24,9 @@ class Todo{
             fs.writeFile(filePath, JSON.stringify(todos), (err) => {
                 if (err) {
                     reject(err);
-                } else {
+                } 
                     resolve();
-                }
+                
             });
         });
     }
