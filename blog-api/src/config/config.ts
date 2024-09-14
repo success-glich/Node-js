@@ -14,7 +14,11 @@ const _config = {
     smtpPort: Number(process.env.SMTP_PORT),
     fromEmail: String(process.env.FROM_EMAIL),
     jwtSecret: String(process.env.JWT_SECRET),
-    jwtTokenExpireTime: String(process.env.TOKEN_EXPIRES_TIME)
+    jwtTokenExpireTime: String(process.env.TOKEN_EXPIRES_TIME),
+    cloudinaryName: String(process.env.CLOUDINARY_NAME),
+    cloudinaryApiKey: String(process.env.CLOUDINARY_API_KEY),
+    cloudinaryApiSecret: String(process.env.CLOUDINARY_API_SECRET),
+    cloudinaryFolder: String(process.env.CLOUDINARY_FOLDER_NAME)
 
 }
 

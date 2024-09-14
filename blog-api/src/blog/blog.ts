@@ -44,6 +44,11 @@ export class Blog extends Model<IBlog> {
     })
     content!: string;
 
+    @Column({
+        type: DataType.STRING
+    })
+    image_url!: string;
+
     @AllowNull(false)
     @Default(BlogStatus.DRAFT)
     @Column({
