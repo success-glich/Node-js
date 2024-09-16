@@ -1,5 +1,2 @@
-My name is Rakesh
-How are you?
-# Go to shop
-# Buy milk
-# go to gym
+hello after 10 secondshello
+go to home

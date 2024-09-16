@@ -33,8 +33,8 @@ const server = http.createServer((req, res) => {
     // });
 
     // String processing
-    // const sampleFileStream = fs.createReadStream('sample.txt');
-    // const outputWritableStream = fs.createWriteStream('output.txt');
+    const sampleFileStream = fs.createReadStream('sample.txt');
+    const outputWritableStream = fs.createWriteStream('output.txt');
 
     // pipeline(sampleFileStream,
     //     replaceWordProcessing,
@@ -53,19 +53,20 @@ const server = http.createServer((req, res) => {
     //     // Writable stream write
     //     outputWritableStream.write(finalString);
     // })
-    // sampleFileStream
-    // .pipe(replaceWordProcessing)
-    // .on('error', (err) => {
-    //     console.log(err)
-    // })
-    // .pipe(uppercaseWordProcessing)
-    // .on('error', (err) => {
-    //     console.log(err)
-    // })
-    // .pipe(outputWritableStream)
-    // .on('error', (err) => {
-    //     console.log(err)
-    // });
+    // * its hard to handle and stop in error  in this stream.
+    sampleFileStream
+    .pipe(replaceWordProcessing)
+    .on('error', (err) => {
+        console.log(err)
+    })
+    .pipe(uppercaseWordProcessing)
+    .on('error', (err) => {
+        console.log(err)
+    })
+    .pipe(outputWritableStream)
+    .on('error', (err) => {
+        console.log(err)
+    });
 
 
     res.end();
